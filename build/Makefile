@@ -13,8 +13,10 @@ DIR = ../src/
 #-------Here all the object dependecies-----------------
 GAME = ../src/game.cpp
 LOG = ../src/utils/Log.cpp
-
-
+EDITOR = ../src/core/Editor.cpp
+SCENE = ../src/core/Scene.cpp
+SANDBOX = ../src/sandbox/MenuScene.cpp ../src/sandbox/PlayScene.cpp
+ALLOBJECTS = $(GAME) $(LOG) $(EDITOR) $(SCENE) $(SANDBOX) 
 #-------------------------------------------------------
 
 #INCLUDE_PATHS specifies the additional include paths we'll need
@@ -33,5 +35,5 @@ LINKER_FLAGS = -lOpenGL32 -lsfml-graphics -lsfml-window -lsfml-system
 
 #This is the target that compiles our executable
 all : $(DIR)$(TARGET).cpp
-	$(CXX) $(STD) $(DIR)$(TARGET).cpp $(GAME) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(LINKER_FLAGS) -o ../bin/$(TARGET)
+	$(CXX) $(STD) $(DIR)$(TARGET).cpp $(ALLOBJECTS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(LINKER_FLAGS) -o ../bin/$(TARGET)
 

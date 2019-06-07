@@ -1,6 +1,7 @@
 #include <iostream>
 #include "wtypes.h"
 #include "Game.h"
+#include "utils/Log.h"
 
 cg2d::Game *game = nullptr;
 
@@ -23,6 +24,8 @@ void GetDesktopResolution(int &horizontal, int &vertical)
 int main(int argc, char const *argv[])
 {
     /* code */
+    cg2d::Log log;
+    log.Create();
     std::cout << "Hello Game" << std::endl;
     int horizontal = 0;
     int vertical = 0;
