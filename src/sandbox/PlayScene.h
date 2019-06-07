@@ -2,10 +2,13 @@
 #define PLAYSCENE_H
 
 #include "../core/Scene.h"
+#include "../core/KinematicObject.h"
 
 class PlayScene : public cg2d::Scene
 {
 private:
+    cg2d::KinematicObject *player;
+    cg2d::KinematicObject *enemy;
 public:
     PlayScene(sf::RenderWindow * window);
 

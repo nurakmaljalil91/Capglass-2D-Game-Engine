@@ -16,7 +16,8 @@ LOG = ../src/utils/Log.cpp
 EDITOR = ../src/core/Editor.cpp
 SCENE = ../src/core/Scene.cpp
 SANDBOX = ../src/sandbox/MenuScene.cpp ../src/sandbox/PlayScene.cpp
-ALLOBJECTS = $(GAME) $(LOG) $(EDITOR) $(SCENE) $(SANDBOX) 
+GAMEOBJECT = ../src/core/GameObject.cpp ../src/core/KinematicObject.cpp
+ALLOBJECTS = $(GAME) $(LOG) $(EDITOR) $(SCENE) $(SANDBOX) $(GAMEOBJECT)
 #-------------------------------------------------------
 
 #INCLUDE_PATHS specifies the additional include paths we'll need

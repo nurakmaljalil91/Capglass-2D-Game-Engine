@@ -1,5 +1,6 @@
 #include "Game.h"
 
+
 // constructor of the game
 cg2d::Game::Game()
 {
@@ -26,9 +27,13 @@ void cg2d::Game::Start()
     // leave the log here
     // log = new cg2d::Log();
     // log->Create();
-
-    sceneManager.push(new PlayScene(window));
     sceneManager.push(new MenuScene(window));
+    sceneManager.push(new PlayScene(window));
+
+    if (!sceneManager.empty())
+    {
+        sceneManager.top()->Start();
+    }
 }
 
 void cg2d::Game::Handle_Events(sf::Event event)
@@ -68,8 +73,8 @@ void cg2d::Game::Run()
     while (window->isOpen())
     {
         clock.restart().asSeconds();              // restart the time
-        elapsed = clock.restart();                // serve as delta time
-        delta_time = clock.restart().asSeconds(); // serve as delta time
+        elapsed = clock.restart();                // serve as delta time as sf::Time
+        delta_time = clock.restart().asSeconds(); // serve as delta time as float
         sf::Event event;
         while (window->pollEvent(event))
         {

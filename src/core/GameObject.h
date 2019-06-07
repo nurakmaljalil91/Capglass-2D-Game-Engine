@@ -7,13 +7,12 @@ namespace cg2d
 {
 class GameObject
 {
-private:
+protected:
     const char *id;
 
     static unsigned int count;
 
     sf::Vector2f position;
-    
 
 public:
     const char *tag;
@@ -25,15 +24,21 @@ public:
     bool is_active;
 
     GameObject();
-    virtual ~GameObject();
-    void Create();
-    void Start();
-    void Update();
-    void Render();
-    void Destroy();
-    void Details();
+    
+    virtual void Create();
+    virtual void Start();
+    virtual void Handle_Events(sf::Event event);
+    virtual void Update(const float &delta_time);
+    virtual void Render(sf::RenderTarget *target);
+    
+    virtual void Destroy();
+    virtual void Details();
     const char *To_String();
-    void Set_Active(bool is_active);
+    virtual void Set_Active(bool is_active);
+
+    int Get_Numbers_Of_GameObject();
+
+    virtual ~GameObject();
 };
 
 } // namespace cg2d
