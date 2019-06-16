@@ -14,7 +14,7 @@ public:
     void Start();
     void Handle_Events(sf::Event event);
     void Update(const float &elapsed);
-    void Render(sf::RenderTarget *target);
+    void Render(sf::RenderTarget &target);
 
     ~MenuScene();
 };

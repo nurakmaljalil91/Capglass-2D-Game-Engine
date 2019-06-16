@@ -5,7 +5,7 @@ void cg2d::Scene::Create(sf::RenderWindow *window) {}
 void cg2d::Scene::Start() {}
 void cg2d::Scene::Update(const float &elapsed) {}
 void cg2d::Scene::Handle_Events(sf::Event event) {}
-void cg2d::Scene::Render(sf::RenderTarget *target) {}
+void cg2d::Scene::Render(sf::RenderTarget &target) {}
 
 void cg2d::Scene::End_Scene(){
     quit = true;

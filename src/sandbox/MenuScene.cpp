@@ -17,6 +17,6 @@ void MenuScene::Update(const float &elapsed)
         std::cout << "A" << std::endl;
     }
 }
-void MenuScene::Render(sf::RenderTarget *target) {}
+void MenuScene::Render(sf::RenderTarget &target) {}
 
 MenuScene::~MenuScene() {}

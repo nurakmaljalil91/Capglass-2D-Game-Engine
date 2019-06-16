@@ -8,29 +8,32 @@ namespace cg2d
 class GameObject
 {
 protected:
-    const char *id;
+    const char *id; // unique id of the gameobject
 
-    static unsigned int count;
+    static unsigned int count; // total number of gameobject created in the world
 
-    sf::Vector2f position;
+    sf::Vector2f position; //Position of the gameobject in the world
+
+    sf::Vector2i size; //size of the gameobject in term of width and height
 
 public:
-    const char *tag;
+    const char *tag; // tag use to search the gameobject
 
-    const char *name;
+    const char *name; // name use to search the gameoject
 
-    unsigned int layer;
+    unsigned int layer; // which layer the game
 
-    bool is_active;
+    bool is_active; // check if the gameobject is active
 
     GameObject();
     
+
     virtual void Create();
     virtual void Start();
     virtual void Handle_Events(sf::Event event);
     virtual void Update(const float &delta_time);
     virtual void Render(sf::RenderTarget *target);
-    
+
     virtual void Destroy();
     virtual void Details();
     const char *To_String();

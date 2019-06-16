@@ -2,8 +2,7 @@
 #include "wtypes.h"
 #include "Game.h"
 #include "utils/Log.h"
-
-cg2d::Game *game = nullptr;
+#include <memory>
 
 // Dev Note : get window size : https://stackoverflow.com/questions/8690619/how-to-get-screen-resolution-in-c
 // Get the horizontal and vertical screen sizes in pixel
@@ -24,13 +23,15 @@ void GetDesktopResolution(int &horizontal, int &vertical)
 int main(int argc, char const *argv[])
 {
     /* code */
+
     cg2d::Log log;
     log.Create();
     std::cout << "Hello Game" << std::endl;
     int horizontal = 0;
     int vertical = 0;
     GetDesktopResolution(horizontal, vertical);
-    game = new cg2d::Game();
+    std::unique_ptr<cg2d::Game> game = std::make_unique<cg2d::Game>();
+    //game = new cg2d::Game();
     game->Create(horizontal, vertical, "Capglass 2D Game Engine");
 
     game->Start();

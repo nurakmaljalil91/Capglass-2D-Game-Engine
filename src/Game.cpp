@@ -65,7 +65,7 @@ void cg2d::Game::Render()
     // window->draw(*circle);
     if (!sceneManager.empty())
     {
-        sceneManager.top()->Render();
+        sceneManager.top()->Render(*window);
     }
 }
 void cg2d::Game::Run()

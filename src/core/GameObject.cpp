@@ -24,7 +24,9 @@ const char *cg2d::GameObject::To_String()
 {
     return name;
 }
-void cg2d::GameObject::Set_Active(bool is_active) {}
+void cg2d::GameObject::Set_Active(bool is_active) {
+    is_active = is_active;
+}
 
 int cg2d::GameObject::Get_Numbers_Of_GameObject()
 {

@@ -6,7 +6,9 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/vendors/",
                 "${workspaceFolder}/vendors/SFML-2.5.1/include",
-                "${workspaceFolder}/src"
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/src/sandbox",
+                "${workspaceFolder}/src/**"
             ],
             "defines": [
                 "_DEBUG",

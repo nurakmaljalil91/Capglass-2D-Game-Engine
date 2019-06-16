@@ -25,7 +25,7 @@ public:
     virtual void Start();
     virtual void Update(const float &elapsed) = 0;
     virtual void Handle_Events(sf::Event event) = 0;
-    virtual void Render(sf::RenderTarget *target = nullptr) = 0;
+    virtual void Render(sf::RenderTarget &target ) = 0;
 
     void End_Scene();
     void Pause_Scene();

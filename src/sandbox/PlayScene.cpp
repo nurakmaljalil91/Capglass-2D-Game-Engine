@@ -10,12 +10,15 @@ void PlayScene::Create(sf::RenderWindow *window)
 
 void PlayScene::Start()
 {
-    std::cout << "is this working?" <<std::endl;
-    player = new cg2d::KinematicObject();
-    player->Start({20,30});
+    chicken = new cg2d::Animal({30, 30});
+    std::cout << chicken->transform.position.x << std::endl;
+    chicken->gameObject.name = "ayam";
+    std::cout << chicken->gameObject.name << std::endl;
+    delete chicken;
 
-    enemy = new cg2d::KinematicObject();
-    std::cout << player->Get_Numbers_Of_GameObject() << std::endl;
+    coordinate_lines = new sf::RectangleShape(sf::Vector2f(0.f, 10.f));
+   
+    
 }
 
 void PlayScene::Handle_Events(sf::Event event)
@@ -31,8 +34,9 @@ void PlayScene::Update(const float &delta_time)
     }
 }
 
-void PlayScene::Render(sf::RenderTarget *target)
+void PlayScene::Render(sf::RenderTarget &target)
 {
+   
 }
 
 PlayScene::~PlayScene() {}

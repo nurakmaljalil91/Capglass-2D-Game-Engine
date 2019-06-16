@@ -2,7 +2,8 @@
 CXX = g++
 
 #Determine the the c++ version compiler using
-STD = -std=c++11
+STD11 = -std=c++11
+STD17 = -std=c++17
 
 #TARGET specifies which file to compile as part of the project
 TARGET = main
@@ -15,7 +16,7 @@ GAME = ../src/game.cpp
 LOG = ../src/utils/Log.cpp
 EDITOR = ../src/core/Editor.cpp
 SCENE = ../src/core/Scene.cpp
-SANDBOX = ../src/sandbox/MenuScene.cpp ../src/sandbox/PlayScene.cpp
+SANDBOX = ../src/sandbox/MenuScene.cpp ../src/sandbox/PlayScene.cpp ../src/sandbox/Animal.cpp
 GAMEOBJECT = ../src/core/GameObject.cpp ../src/core/KinematicObject.cpp
 ALLOBJECTS = $(GAME) $(LOG) $(EDITOR) $(SCENE) $(SANDBOX) $(GAMEOBJECT)
 #-------------------------------------------------------
@@ -36,5 +37,5 @@ LINKER_FLAGS = -lOpenGL32 -lsfml-graphics -lsfml-window -lsfml-system
 
 #This is the target that compiles our executable
 all : $(DIR)$(TARGET).cpp
-	$(CXX) $(STD) $(DIR)$(TARGET).cpp $(ALLOBJECTS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(LINKER_FLAGS) -o ../bin/$(TARGET)
+	$(CXX) $(STD17) $(DIR)$(TARGET).cpp $(ALLOBJECTS) $(INCLUDE_PATHS) $(LIBRARY_PATHS) $(LINKER_FLAGS) -o ../bin/$(TARGET)
 
